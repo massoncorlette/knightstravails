@@ -17,8 +17,15 @@ make the 2D graph of coordinates for the board
 
 knightMoves(start,end)
 
+  if storing moves, can use height of array for move amount
+
   from root get all possible moves,
   if we can go right or left, be recursive?
   the possible moves go into edge list (array)
+
+  using a nested loop check if x high/low
+    inner loop check if y high/low
+
+  
 
   
