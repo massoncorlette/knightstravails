@@ -11,20 +11,25 @@ Some parameters to consider:
 
 - Need a searching algorithm to find shortest path
 
+- Can either get height from stored moves array height or
+have the height be returned recursively
+
 Pseudo:
 
 make the 2D graph of coordinates for the board
 
 knightMoves(start,end)
 
-  if storing moves, can use height of array for move amount
+  if the coordinates to move is out of bounds, return -1
 
-  from root get all possible moves,
-  if we can go right or left, be recursive?
-  the possible moves go into edge list (array)
+  if the coordinates to move is on target, return -1
 
-  using a nested loop check if x high/low
-    inner loop check if y high/low
+  add a move
+
+  
+  
+
+  
 
   
 

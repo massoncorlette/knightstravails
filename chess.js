@@ -4,6 +4,7 @@ const gameBoard = [8][8];
 
 function knightMoves(start,end) {
 
+  // adjacency list graph, that will hold the edges or moves for the graph
   let moves = [];
 
   let endX = end[0];
@@ -21,6 +22,10 @@ function knightMoves(start,end) {
   if (startX === endX && startY === endY) {
     return -1;
   }
+
+  
+
+
 
 
 
