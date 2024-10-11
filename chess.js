@@ -23,10 +23,5 @@ function knightMoves(start,end) {
     return -1;
   }
 
-  
-
-
-
-
 
 }

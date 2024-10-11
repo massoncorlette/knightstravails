@@ -27,7 +27,24 @@ knightMoves(start,end)
   add a move
 
   
-  
+Questions:
+
+What can we do with the adjacency list? 
+  - One idea is taking advantage of it being a 2D array
+  of moves. 
+
+  - Thinking in terms of binary search tree being similar to a graph, can enable me to think in terms of traversing a 
+  graph like a tree
+
+  - Taking into account using an array for moves as a Que,
+     
+     1. Make the move from start coordinate, after
+     pointing to the other possible moves adding to que
+     2. Is it the target coordinate?
+     3. If no, point to all the next possible
+     moves, and add them to Que
+     4. Go back to the start coordinate, traverse to other move
+      (Breadth-first search)
 
   
 
