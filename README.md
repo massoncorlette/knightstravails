@@ -16,16 +16,26 @@ have the height be returned recursively
 
 Pseudo:
 
-make the 2D graph of coordinates for the board
+initialize adjacency list moves[]
 
-knightMoves(start,end)
+initialize current moves
 
-  if the coordinates to move is out of bounds, return -1
+get the starting and target 
+coordinates
 
-  if the coordinates to move is on target, return -1
+if piece goes off board, exit
 
-  add a move
+if the coordinates match return moves array for base case
 
+push moves
+
+change array coordinates 
+
+
+push all the possible moves into que,
+then push that que into the adjacency list,
+every vertex is the given move - the vertices are possible
+moves
   
 Questions:
 
