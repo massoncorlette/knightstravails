@@ -46,6 +46,9 @@ What can we do with the adjacency list?
      4. Go back to the start coordinate, traverse to other move
       (Breadth-first search)
 
+
+ First I have my error handling for if piece goes off board, than my base case for when target coordinate is found. Then I will check x+2 y+1, x+1 y+2, etc ...For the move I am on now, I will check if the current coordinate I am on it the target, if not I will go ahead and account for the next possible moves and store them as vertices for the current vertix(coordinate) in the list. Traversing to next possible move for current coordinate..
+
   
 
   
