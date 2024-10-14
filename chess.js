@@ -7,6 +7,7 @@ function knightMoves(start,end) {
   // adjacency list graph, that will hold the edges or moves for the graph
   let moves = [];
 
+  //my Que array
   let currentMoves = [];
 
   let endX = end[0];
@@ -21,17 +22,16 @@ function knightMoves(start,end) {
   }
 
   // base case
+  while (!(startX === endX && startY === endY)) {
+    
+
+    
+  }
+  
   if (startX === endX && startY === endY) {
     return currentMoves;
   }
-  currentMoves.push(start);
 
-  start[0] = start[0] + 2;
-  start[1] = start[1] + 1;
-
-  knightMoves(start, end);
-
-  return currentMoves;
 }
 
 console.log(knightMoves([0,1], [2,4]));

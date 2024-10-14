@@ -59,6 +59,19 @@ What can we do with the adjacency list?
 
  First I have my error handling for if piece goes off board, than my base case for when target coordinate is found. Then I will check x+2 y+1, x+1 y+2, etc ...For the move I am on now, I will check if the current coordinate I am on it the target, if not I will go ahead and account for the next possible moves and store them as vertices for the current vertix(coordinate) in the list. Traversing to next possible move for current coordinate..
 
+New Pseudo Using Que and While Loop:
+
+initalize adjacency list and currentMoves Que array
+
+get and assign coordinates to variables
+
+error handling for moves going off board
+
+while the coordinates do not equal eachother
+
+  
+
+
   
 
   
