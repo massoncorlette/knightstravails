@@ -69,7 +69,19 @@ error handling for moves going off board
 
 while the coordinates do not equal eachother
 
-  
+
+1. We have vertex which is every possible move, each vertex has
+it's vertices (possible moves)
+
+2. So for every move we have possible moves
+
+3. We can place those moves into the adjacency list
+
+4. We must do a BFS search in order to put data into list
+
+5. The list will have the shortest path
+
+
 
 
   
