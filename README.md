@@ -57,6 +57,22 @@ What can we do with the adjacency list?
       (Breadth-first search)
 
 
+Since this is a breadth search, this may not call for recursion, we 
+should be able to get to the coordinates with maybe just a while loop 
+and conditionals. Storing the previous moves still serves tricky
+
+
+1. Want to first check we are not on the 
+coordinate
+
+2. Then want to store all the 
+possible moves from that spot in Que.
+
+3. We then want to go to the first in Que.
+
+4. Repeat first 3 steps
+
+
  First I have my error handling for if piece goes off board, than my base case for when target coordinate is found. Then I will check x+2 y+1, x+1 y+2, etc ...For the move I am on now, I will check if the current coordinate I am on it the target, if not I will go ahead and account for the next possible moves and store them as vertices for the current vertix(coordinate) in the list. Traversing to next possible move for current coordinate..
 
 New Pseudo Using Que and While Loop:
