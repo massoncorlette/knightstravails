@@ -1,20 +1,11 @@
 
 function knightMoves(start,end) {
 
-  // adjacency list graph, that will hold the edges or moves for the graph
+  // que 
   let moves = [];
 
-  // my Que array
-  let currentMoves = [
-    [start[0] + 2, start[1] + 1],
-    [start[0] + 2, start[1] - 1],
-    [start[0] + 1, start[1] + 2],
-    [start[0] + 1, start[1] - 2],
-    [start[0] - 2, start[1] + 1],
-    [start[0] - 2, start[1] - 1],
-    [start[0] - 1, start[1] + 2],
-    [start[0] - 1, start[1] - 2],
-  ];
+  // adjacency list graph, that will hold the edges or moves for the graph
+  let adjacencyListOfMoves = []
 
   function knightMoveErrorHandler(x,y) {
     if (!(x < 0 || x > 7 || y < 0 || y > 7)) {
@@ -22,23 +13,41 @@ function knightMoves(start,end) {
     }
   }
 
-  function returnVertices() {
+  function filterVertices(moveXY) {
+    let currentMoves = [
+      [moveXY[0], moveXY[1]],
+      [moveXY[0] + 2, moveXY[1] + 1],
+      [moveXY[0] + 2, moveXY[1] - 1],
+      [moveXY[0] + 1, moveXY[1] + 2],
+      [moveXY[0] + 1, moveXY[1] - 2],
+      [moveXY[0] - 2, moveXY[1] + 1],
+      [moveXY[0] - 2, moveXY[1] - 1],
+      [moveXY[0] - 1, moveXY[1] + 2],
+      [moveXY[0] - 1, moveXY[1] - 2],
+    ];
+
     currentMoves.forEach((move) => knightMoveErrorHandler(move[0],move[1]));
 
-    return moves;
-  }
-
-  function checkVertices() {
-    for (let i=0;i<moves.length;i++) {
-      if (moves[i][0] === end[0] && moves[i][1] === end[1]) {
-        return end;
-      }
+    if (moves.length !== 0) {
+      return moves;
     }
   }
-  returnVertices();
-  return checkVertices();
+
+  function checkVertices(moves) {
+    for (let i=0;i<moves.length;i++) {
+      if (moves[0] === end[0] && moves[1] === end[1]) {
+        return adjacencyListOfMoves;
+      }
+    }
+    return ;
+  }
+  adjacencyListOfMoves.push(filterVertices(start));
+
+  
   
 
+  return adjacencyListOfMoves;
+  
 }
 
 console.log(knightMoves([0,3], [2,4]));

@@ -14,7 +14,32 @@ Some parameters to consider:
 - Can either get height from stored moves array height or
 have the height be returned recursively
 
-Pseudo:
+
+New Pseudo (10/17): Going to write the most english step by step operations
+
+1. Get the possible moves from starting coordinate, store in Que
+
+2. We will then need to check all those possible next moves for target
+
+3. If none are the target, we can go to the first next move in Que
+
+  1. Store the possible moves from starting coordinate
+
+  2. Check all those possible moves
+
+  3. If none are target, go to next move inside Que
+
+
+
+
+
+
+
+
+
+
+
+Old Pseudo:
 
 initialize adjacency list moves[]
 
@@ -96,6 +121,9 @@ it's vertices (possible moves)
 4. We must do a BFS search in order to put data into list
 
 5. The list will have the shortest path
+
+
+
 
 
 
