@@ -8,14 +8,15 @@ function knightMoves(start,end) {
   let adjacencyListOfMoves = []
 
   function knightMoveErrorHandler(x,y) {
+    let move = []
     if (!(x < 0 || x > 7 || y < 0 || y > 7)) {
-      moves.push([x,y]);
+      move.push([x,y]);
+      return move;
     }
   }
 
   function filterVertices(moveXY) {
     let currentMoves = [
-      [moveXY[0], moveXY[1]],
       [moveXY[0] + 2, moveXY[1] + 1],
       [moveXY[0] + 2, moveXY[1] - 1],
       [moveXY[0] + 1, moveXY[1] + 2],
@@ -26,24 +27,22 @@ function knightMoves(start,end) {
       [moveXY[0] - 1, moveXY[1] - 2],
     ];
 
-    currentMoves.forEach((move) => knightMoveErrorHandler(move[0],move[1]));
+    // getting the valid moves
+    let results = [];
+    currentMoves.forEach((move) => {
+      let result = knightMoveErrorHandler(move[0], move[1]);
+      if (result) {
+        results.push(result);
+      }
+    });
 
-    if (moves.length !== 0) {
-      return moves;
-    }
+    if (results.length !== 0) {
+      return results;
+    }  
+
   }
-  filterVertices(start);
+  return filterVertices(start);
 
-  while (moves.length !== 0) {
-    let currentQue = moves.shift();
-     
-    if (currentQue[0] === end[0] && currentQue[1] === end[1]) {
-      return adjacencyListOfMoves;
-    }
-    adjacencyListOfMoves.push(filterVertices(currentQue));
-  }
-
-  
 }
 
 console.log(knightMoves([0,3], [2,4]));

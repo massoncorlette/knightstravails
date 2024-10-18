@@ -35,6 +35,24 @@ check for target, if no target, go to next Que
 
 filter and push moves into adjacency list
 
+------
+
+filterVertices not returning potential new moves with the 
+currentQue shifted from moves, probably because I can't reassign
+the already made array.
+filtering the moves puts them inside the que 
+
+
+----- some more pseudo for the 100th time
+
+while the que length is not 0
+  lets go to next move in que
+  if it is the target we need to stop this loop
+
+  we can go ahead and put the potential moves in que
+
+
+
 
 
 
