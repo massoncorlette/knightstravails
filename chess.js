@@ -32,21 +32,17 @@ function knightMoves(start,end) {
       return moves;
     }
   }
+  filterVertices(start);
 
-  function checkVertices(moves) {
-    for (let i=0;i<moves.length;i++) {
-      if (moves[0] === end[0] && moves[1] === end[1]) {
-        return adjacencyListOfMoves;
-      }
+  while (moves.length !== 0) {
+    let currentQue = moves.shift();
+     
+    if (currentQue[0] === end[0] && currentQue[1] === end[1]) {
+      return adjacencyListOfMoves;
     }
-    return ;
+    adjacencyListOfMoves.push(filterVertices(currentQue));
   }
-  adjacencyListOfMoves.push(filterVertices(start));
 
-  
-  
-
-  return adjacencyListOfMoves;
   
 }
 

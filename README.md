@@ -29,6 +29,13 @@ New Pseudo (10/17): Going to write the most english step by step operations
 
   3. If none are target, go to next move inside Que
 
+-----------
+
+check for target, if no target, go to next Que
+
+filter and push moves into adjacency list
+
+
 
 
 
