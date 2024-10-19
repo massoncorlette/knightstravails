@@ -14,7 +14,6 @@ function knightMoves(start,end) {
 
   function filterVertices(moveXY) {
     let currentMoves = [
-      [moveXY[0], moveXY[1]],
       [moveXY[0] + 2, moveXY[1] + 1],
       [moveXY[0] + 2, moveXY[1] - 1],
       [moveXY[0] + 1, moveXY[1] + 2],
@@ -49,20 +48,19 @@ function knightMoves(start,end) {
     let nextMoves = filterVertices(currentQue);
 
     for (let i=0;i<nextMoves.length;i++) {
+      movesQue.push(nextMoves[i]);
+    }
+
+    adjacencyListOfMoves.push(nextMoves);
+
+    for (let i=0;i<nextMoves.length;i++) {
       if (nextMoves[i][0] === end[0] && nextMoves[i][1] === end[1]) {
         adjacencyListOfMoves.push(nextMoves);
         return adjacencyListOfMoves;
       }
     }
-
-    if (currentQue[0] !== start[0] && currentQue[1] !== start[1]) {
-      for (let i=0;i<nextMoves.length;i++) {
-        movesQue.push(nextMoves[i]);
-      }
-      adjacencyListOfMoves.push(nextMoves);
-     }
-    }
-
+  }
+    
 };
 
 console.log(knightMoves([3,3], [4,3]));
