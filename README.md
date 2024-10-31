@@ -15,6 +15,50 @@ Some parameters to consider:
 have the height be returned recursively
 
 
+New Pseudo 10/31
+
+list = []
+
+que = [start],
+
+push start to que
+
+1. function to handle move (handle going off board)
+
+2. function to check for a repeat move
+
+3. function to return valid moves using 1 & 2
+	*push valid moves into que
+		if no valid moves return
+
+4. function to get shortest path/paths (after list made)
+
+while (que.length !== 0)
+	
+	let currentMove = que.shift()
+
+	3.function(currentMove)
+
+  **HOW DO I BUILD THE DAMN LIST!!!!!!!????**
+
+once que is empty,use 4.function to return shortest path
+from the built adjacency list. 
+
+-------------
+
+
+New Plain English Pseudo 10/19
+
+I want to find the shortest possible path to the target
+move. The list will have arrays of the connected vertices/moves, for every array will be a pathway.
+
+We need to consider logic for if the same move was taken in a given pathway. This will also help with the fact that we may have multple 
+short paths, so the search could end when all the possible moves are taken.
+
+With the list we could then succesfully loop through it to get the shortest path.
+
+-------------
+
 New Pseudo (10/17): Going to write the most english step by step operations
 
 1. Get the possible moves from starting coordinate, store in Que
@@ -50,17 +94,6 @@ while the que length is not 0
   if it is the target we need to stop this loop
 
   we can go ahead and put the potential moves in que
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -146,6 +179,16 @@ it's vertices (possible moves)
 4. We must do a BFS search in order to put data into list
 
 5. The list will have the shortest path
+
+
+      [moveXY[0] + 2, moveXY[1] + 1],
+      [moveXY[0] + 2, moveXY[1] - 1],
+      [moveXY[0] + 1, moveXY[1] + 2],
+      [moveXY[0] + 1, moveXY[1] - 2],
+      [moveXY[0] - 2, moveXY[1] + 1],
+      [moveXY[0] - 2, moveXY[1] - 1],
+      [moveXY[0] - 1, moveXY[1] + 2],
+      [moveXY[0] - 1, moveXY[1] - 2],
 
 
 

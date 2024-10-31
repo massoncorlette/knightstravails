@@ -51,10 +51,20 @@ function knightMoves(start,end) {
         filteredVertices.push(result);
       }
     });
+
+    if (filteredVertices.length === 0) {
+      return ;
+    }
+
+    filterVertices.forEach((move) => {
+      que.push(move);
+    })
     return filteredVertices;
   };
   // may need to have the starting vertex for every array the given move taken
-  return filterVertices(start);
+  while (que.length !== 0) {
+    let currentMove = que.shift();
+  }
 };
 
 console.log(knightMoves([3,3], [4,3]));
