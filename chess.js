@@ -5,7 +5,6 @@ function knightMoves(start,end) {
   let adjacencyListOfMoves = []
 
   let que = [];
-  que.push(start);
 
   // handling moveset
   function knightMoveErrorHandler(x,y) {
@@ -56,13 +55,19 @@ function knightMoves(start,end) {
       return ;
     }
 
-    filterVertices.forEach((move) => {
+    filteredVertices.forEach((move) => {
       que.push(move);
     })
     return filteredVertices;
   };
-  // may need to have the starting vertex for every array the given move taken
-  let startingMoves = filterVertices(start);
+  // putting the first starting moves into que
+  filterVertices(start);
+
+  while (que) {
+    let nextMove = que.shift();
+
+    
+  }
 };
 
 console.log(knightMoves([3,3], [4,3]));
