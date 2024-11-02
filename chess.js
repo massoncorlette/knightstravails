@@ -1,10 +1,8 @@
 
 function knightMoves(start,end) {
 
-  // adjacency list graph, that will hold the edges or moves for the graph
+  // adjacency list graph, that will hold the edges or moves for the graph, also use as que
   let adjacencyListOfMoves = []
-
-  let que = [];
 
   // handling moveset
   function knightMoveErrorHandler(x,y) {
@@ -45,31 +43,67 @@ function knightMoves(start,end) {
 
     currentMoves.forEach((move) => {
       let result = knightMoveErrorHandler(move[0], move[1]);
-      
-      if (checkCoordinate(result[0],result[1])) {
+
+      if (result && checkCoordinate(result[0],result[1])) {
         filteredVertices.push(result);
       }
+
     });
 
     if (filteredVertices.length === 0) {
       return ;
     }
 
-    filteredVertices.forEach((move) => {
-      que.push(move);
-    })
     return filteredVertices;
   };
+
+  if (start[0] === end[0] && start[1] === end[1]) {
+    return ("They are the same move?!");
+  }
+
   // putting the first starting moves into que
   const initialMoves = filterVertices(start);
+  let currentMovePath = null;
+  let currentMove = null;
+  let target = false;
 
-  initialMoves.forEach((move) => {
+  for (const move of initialMoves) {
+    if (move[0] === end[0] && move[1] === end[1]) {
+      currentMovePath = move;
+      target = true;
+      break; 
+    }
     let arr = [];
     arr.push(move);
     adjacencyListOfMoves.push(arr);
-  })
-  return adjacencyListOfMoves;
-  
+  };
+
+  while (!(target)) {
+
+    //getting FIFO move path, and active move from the move path
+    currentMovePath = adjacencyListOfMoves.shift();
+    currentMove = currentMovePath.pop();
+
+    let nextValidMoves = filterVertices(currentMove);
+
+    if (nextValidMoves === true) {
+      target = true;
+    } else {
+      nextValidMoves.forEach((move) => {
+        let updatedPath = [];
+
+        // since arrays pass by reference, storing and adding valid move into new array here
+        currentMovePath.forEach((pathmove) => {
+          updatedPath.push(pathmove);
+        })
+
+        updatedPath.push(move);
+        adjacencyListOfMoves.push(updatedPath);
+      })
+    }
+  }
+  return "The shortest path is " + currentMovePath;
+
 };
 
-console.log(knightMoves([3,3], [4,3]));
+console.log(knightMoves([3,3], [2,4]));
