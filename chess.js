@@ -61,13 +61,15 @@ function knightMoves(start,end) {
     return filteredVertices;
   };
   // putting the first starting moves into que
-  filterVertices(start);
+  const initialMoves = filterVertices(start);
 
-  while (que) {
-    let nextMove = que.shift();
-
-    
-  }
+  initialMoves.forEach((move) => {
+    let arr = [];
+    arr.push(move);
+    adjacencyListOfMoves.push(arr);
+  })
+  return adjacencyListOfMoves;
+  
 };
 
 console.log(knightMoves([3,3], [4,3]));
