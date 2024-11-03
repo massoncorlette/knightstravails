@@ -31,23 +31,24 @@ move set from list and do the following (within whileloop)
 
 	take the first move path (removes from list)
 
-	take the current move in path
+  store the path into new array
 
-	take every move from path, push into new array
+	take the current move from path
 
-	pass the currentMove into function
-	getting the valid moves
+  get the next valid moves from current move
 
-	
+  for each valid move
 
-	if target in valid moves, will return path
+    for each move in path
 
-	else put stored array into new array 
-	push valid move into new array
-	then we will push the new array into list
-	  repeat
+      if the move is target
+      return
 
-	
+    push the moves into a new array
+
+  push next move into new array
+  push the new array into the list
+
 
 push - add to the end
 pop - remove last element
