@@ -84,17 +84,25 @@ function knightMoves(start,end) {
     currentMovePath = adjacencyListOfMoves.shift();
     currentMove = currentMovePath.pop();
 
+    let storePath = [];
+
+    // since arrays pass by reference, storing and into new array here
+    currentMovePath.forEach((pathmove) => {
+      storePath.push(pathmove);
+    })
+
+    // getting the next valid moves for current move
     let nextValidMoves = filterVertices(currentMove);
 
     if (nextValidMoves === true) {
       target = true;
     } else {
       nextValidMoves.forEach((move) => {
+
         let updatedPath = [];
 
-        // since arrays pass by reference, storing and adding valid move into new array here
-        currentMovePath.forEach((pathmove) => {
-          updatedPath.push(pathmove);
+        storePath.forEach((move) => {
+          updatedPath.push(move);
         })
 
         updatedPath.push(move);
@@ -106,4 +114,4 @@ function knightMoves(start,end) {
 
 };
 
-console.log(knightMoves([3,3], [2,4]));
+console.log(knightMoves([3,3], [7,3]));

@@ -15,6 +15,47 @@ Some parameters to consider:
 have the height be returned recursively
 
 
+11/2/24 Pseudo
+(Thinking in terms of using the Adjacency list as the
+Que)
+
+check first if the given coordinate is target
+
+
+if it is not, get the first valid moves
+
+put all the starting moves[arrays] into list
+
+using the adjacency list as a que, we will take the first
+move set from list and do the following (within whileloop)
+
+	take the first move path (removes from list)
+
+	take the current move in path
+
+	take every move from path, push into new array
+
+	pass the currentMove into function
+	getting the valid moves
+
+	
+
+	if target in valid moves, will return path
+
+	else put stored array into new array 
+	push valid move into new array
+	then we will push the new array into list
+	  repeat
+
+	
+
+push - add to the end
+pop - remove last element
+shift - remove first element
+
+
+
+
 11/1/24 Pseudo
 (Thinking in terms of using the Adjacency list as the
 Que)
