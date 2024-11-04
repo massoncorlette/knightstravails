@@ -76,28 +76,25 @@ function knightMoves(start,end) {
     currentMovePath = adjacencyListOfMoves.shift(); //getting FIFO move path
 
     let storePath = [];
-
     currentMovePath.forEach((pathmove) => { // since arrays pass by reference, storing and into new array here
       storePath.push(pathmove);
     })
 
     currentMove = currentMovePath.pop(); // getting active move from path
-
     let nextValidMoves = filterVertices(currentMove); // getting the next valid moves for current move
 
     if (nextValidMoves !== true) {
       nextValidMoves.forEach((nextMove) => {
-
         let updatedPath = [];
-  
-        storePath.forEach((move) => {
+
+        for (let i = 0; i < storePath.length; i++) {
+          let move = storePath[i];
           if (move[0] === end[0] && move[1] === end[1]) {
             target = true;
-            return;
-            }
-  
+            return; // Exits the outer function
+          }
           updatedPath.push(move);
-        })
+        }
   
         updatedPath.push(nextMove);
         adjacencyListOfMoves.push(updatedPath);
